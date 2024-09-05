@@ -14,7 +14,9 @@ data:
         port = 8443
       }
       paths {
-        "/customdtsp/tp2" = "/com.snowplowanalytics.snowplow/tp2"
+      {{- range $key, $value := .Values.collector.customPaths }}
+        "{{ $key }}" = "{{ $value }}"
+      {{- end }}
       }
       p3p {
         policyRef = "/w3c/p3p.xml"
@@ -61,7 +63,7 @@ data:
         accessControlMaxAge = "5 seconds"
       }
       prometheusMetrics {
-        enabled = false
+        enabled = true
       }
       streams {
         good = {{ .Values.collector.kafka.outTopic }}
@@ -93,8 +95,8 @@ data:
       }
     }
     akka {
-{{/*      loglevel = WARNING*/}}
-      loglevel = DEBUG
+{{/*      loglevel = DEBUG*/}}
+      loglevel = WARNING
       loggers = ["akka.event.slf4j.Slf4jLogger"]
       http.server {
         remote-address-header = on

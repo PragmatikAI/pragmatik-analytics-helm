@@ -28,7 +28,7 @@ spec:
                 topologyKey: "kubernetes.io/hostname"
       containers:
         - name: collector-server
-          image: snowplow/scala-stream-collector-kafka:2.10.0
+          image: pragmatikai/scala-stream-collector-kafka:2.10.3
           command:
             - "/home/snowplow/bin/snowplow-stream-collector"
             - "--config"

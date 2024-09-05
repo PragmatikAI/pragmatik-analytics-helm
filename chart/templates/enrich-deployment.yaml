@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: enrich-server
-          image: snowplow/snowplow-enrich-kafka:3.9.0
+          image: pragmatikai/pragmatik-enrich-kafka:3.9.9
           command:
             - "/home/snowplow/bin/snowplow-enrich-kafka"
             - "--config"
@@ -62,6 +62,18 @@ spec:
                 path: enrichments/enrichment_referrer_parser.json
               - key: enrichment_ua_parser.json
                 path: enrichments/enrichment_ua_parser.json
+              {{- if .Values.enrich.enrichment_javascript }}
+              - key: enrichment_javascript.json
+                path: enrichments/enrichment_javascript.json
+              {{- end }}
+              {{- if .Values.enrich.enrichment_api_request }}
+              - key: enrichment_api_request.json
+                path: enrichments/enrichment_api_request.json
+              {{- end }}
+              {{- if .Values.enrich.enrichment_spiders_and_bots }}
+              - key: enrichment_spiders_and_bots.json
+                path: enrichments/enrichment_spiders_and_bots.json
+              {{- end }}
         - name: service-account-credentials-volume
           secret:
             secretName: enrich-serviceaccount-creds

@@ -1,12 +1,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: snowplow
+  name: snowplow-collector
   namespace: {{ .Release.Namespace }}
+  {{- if .Values.collector.ingress.annotations }}
+  annotations:
+   {{ - toYaml .Values.ingress.web.annotations | nindent 4 }}
+  {{- end }}
 spec:
   tls:
     - hosts:
         - {{ .Values.url }}
+      {{- if .Values.ingress.web.tls.secretName }}
+      secretName: {{ .Values.collector.ingress.tls.secretName }}
+      {{- end }}
+      
+  ingressClassName: {{ .Values.collector.ingress.className }}
   rules:
     - host: {{ .Values.url }}
       http:

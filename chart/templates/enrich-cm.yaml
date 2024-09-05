@@ -4,6 +4,21 @@ metadata:
   name: enrich-configmap
   namespace: {{ .Release.Namespace }}
 data:
+  {{- if .Values.enrich.enrichment_javascript }}
+  enrichment_javascript.json: |
+    {{ .Values.enrich.enrichment_javascript | indent 4 }}
+  {{- end }}
+
+  {{- if .Values.enrich.enrichment_api_request }}
+  enrichment_api_request.json: |
+    {{ .Values.enrich.enrichment_api_request | indent 4 }}
+  {{- end }}
+
+  {{- if .Values.enrich.enrichment_spiders_and_bots }}
+  enrichment_spiders_and_bots.json: |
+    {{ .Values.enrich.enrichment_spiders_and_bots | indent 4 }}
+  {{- end }}
+
   enrichment_campaigns.json: |
     {
       "schema": "iglu:com.snowplowanalytics.snowplow/campaign_attribution/jsonschema/1-0-1",
@@ -19,6 +34,16 @@ data:
             "mktTerm": ["utm_term", "legacy_term"],
             "mktContent": ["utm_content"],
             "mktCampaign": ["utm_campaign", "cid", "legacy_campaign"]
+            "mktClickId": {
+              "gclid": "Google",
+              "fbclid": "Facebook",
+              "dclid": "DoubleClick",
+              "msclkid": "Bing",
+              "ttclid": "TikTok",
+              "vmcid": "Yahoo",
+              "twclid": "Twitter",
+              "li_fat_id": "LinkedIn"
+            }
           }
         }
       }
