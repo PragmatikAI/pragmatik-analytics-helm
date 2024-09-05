@@ -1,0 +1,37 @@
+annotations:
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/links: |
+    - name: Chart Source
+      url: https://github.com/PragmatikAI/pragmatik-analytics-helm
+    - name: Upstream Project
+      url: https://github.com/PragmatikAI/pragmatik-analytics-helm
+  artifacthub.io/operator: "true"
+apiVersion: v2
+appVersion: v1.1
+description: pragmatik-analytics-helm Snowplow k8s chart
+home: https://github.com/PragmatikAI/pragmatik-analytics-helm
+keywords:
+  - argocd
+kubeVersion: '>=1.16.0-0'
+maintainers:
+  - email: analytics@pragmatik.ai
+    name: pragmatik-dev
+name: pragmatik-analytics-helm
+sources:
+  - https://github.com/PragmatikAI/pragmatik-analytics-helm
+type: application
+version: 0.1.59
+
+dependencies:
+  - name: strimzi-kafka-operator
+    version: "0.38.0"
+    repository: "https://strimzi.io/charts/"
+    condition: strimzi.enabled
+  - name: cloudnative-pg
+    version: "0.19.1"
+    repository: "https://cloudnative-pg.io/charts/"
+    condition: cloudnativepg.enabled
+  - name: postgresql
+    repository: https://charts.bitnami.com/bitnami
+    version: 11.9.13
+    condition: postgresql.enabled

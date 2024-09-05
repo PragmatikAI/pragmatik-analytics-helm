@@ -1,0 +1,79 @@
+{{ if .Values.cloudnativepg.enabled }}
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: iglu-pg-db
+  namespace: {{ .Release.Namespace }}
+spec:
+  description: "Iglu cluster"
+  imageName: {{ .Values.iglu.database.image.name }}:{{ .Values.iglu.database.image.tag }}
+  instances: {{  }} 
+  primaryUpdateStrategy: unsupervised
+  storage:
+    storageClass: gp2
+    size: "{{ .Values.iglu.database.storage.pgData.sizeGb }}Gi"
+  walStorage:
+    size: "{{ .Values.iglu.database.storage.wal.sizeGb }}Gi"
+  monitoring:
+    enabled: true
+    enablePodMonitor: true
+  affinity:
+    enablePodAntiAffinity: true
+    nodeAffinity: {}
+    podAntiAffinityType: preferred
+    topologyKey: kubernetes.io/zone
+  
+  bootstrap:
+    initdb:
+      database: {{ .Values.iglu.database.name }}
+      owner: {{ .Values.iglu.database.user }}
+      secret:
+        name: iglu-postgres-app
+  superuserSecret:
+    name: iglu-postgres-master
+  postgresql:
+    parameters:
+      shared_buffers: 256MB
+      pg_stat_statements.max: '10000'
+      pg_stat_statements.track: all
+      auto_explain.log_min_duration: '10s'
+    syncReplicaElectionConstraint:
+      enabled: true
+      nodeLabelsAntiAffinity:
+      - topology.kubernetes.io/zone
+    pg_hba:
+      - local all {{ .Values.iglu.database.masterUser }} md5
+      - local all {{ .Values.iglu.database.user }} md5
+  backup:
+    barmanObjectStore:
+      destinationPath: 's3://{{ .Values.iglu.databae.backup.s3.backupBucket }}/db-data-backup/{{ .Values.iglu.databae.backup.s3.appDb }}'
+      endpointURL: 'https://s3.{{ .Values.iglu.databae.backup.s3.region }}.amazonaws.com/'
+      s3Credentials:
+        accessKeyId:
+          name: {{ .Values.dbName }}-backup-creds
+          key: ACCESS_KEY_ID
+        secretAccessKey:
+          name: {{ .Values.dbName }}-backup-creds
+          key: ACCESS_SECRET_KEY
+      wal:
+        compression: gzip
+        encryption: AES256
+      data:
+        compression: gzip
+        encryption: AES256
+        immediateCheckpoint: false
+        jobs: 2
+    retentionPolicy: "3d"
+
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "1"
+    limits:
+      memory: "1Gi"
+      cpu: "2"
+
+  nodeMaintenanceWindow:
+    inProgress: false
+    reusePVC: false
+{{ end }}

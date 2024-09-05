@@ -1,0 +1,40 @@
+apiVersion: v1
+entries:
+  /pragmatik-analytics-helm:
+  - annotations:
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/PragmatikAI/pragmatik-analytics-helm
+        - name: Upstream Project
+          url: https://github.com/PragmatikAI/pragmatik-analytics-helm
+      artifacthub.io/operator: "true"
+    apiVersion: v2
+    appVersion: v1.1
+    created: "2023-12-22T20:35:53.576482+01:00"
+    dependencies:
+    - condition: strimzi.enabled
+      name: strimzi-kafka-operator
+      repository: https://strimzi.io/charts/
+      version: 0.38.0
+    - condition: cloudnativepg.enabled
+      name: cloudnative-pg
+      repository: https://cloudnative-pg.io/charts/
+      version: 0.19.1
+    description: pragmatik-analytics-helm Pragmatik Analytics k8s chart
+    digest: 29f9638dda44b3e5615bf7d9a18b2034165a14f04dfcfcc7bf54a0d9c198fc77
+    home: https://github.com/PragmatikAI/pragmatik-analytics-helm
+    keywords:
+    - argocd
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: analytics@pragmatik.ai
+      name: pragmatik-devs
+    name: pragmatik-analytics-helm
+    sources:
+    - https://github.com/PragmatikAI/pragmatik-analytics-helm
+    type: application
+    urls:
+    - TODO
+    version: 0.1.59
+generated: "2023-12-22T20:35:53.552984+01:00"

@@ -1,0 +1,50 @@
+nameOverride: ""
+
+url: "pragmatik.co"
+akhqUrl: "akhq.com"
+
+collector:
+  serviceaccountCreds: "ZW1wdHkK"
+  kafka:
+    outTopic: collector-payloads
+  serviceType: NodePort
+
+enrich:
+  serviceaccountCreds: "ZW1wdHkK"
+  salt: "empty"
+
+bqloader:
+  serviceaccountCreds: "ZW1wdHkK"
+
+iglu:
+  apiKey: "REPLACE-ME"
+  database:
+    host: "snowplow-postgres.snowplow"
+    name: "iglu"
+    user: "iglu"
+    password: "iglu"
+    masterUser: "postgres"
+    masterPassword: "REPLACEME"
+    instanceCount: 2
+    image:
+      name: ghcr.io/cloudnative-pg/postgresql
+      tag: 16.3
+    storage:
+      pgData:
+        sizeGb: 8
+      wal:
+        sizeGb: 8
+    backup:
+      schedule: "0 0 1 * * 5"
+      name: "iglu-weekly-pg-backup"
+      s3:
+        backupBucket: ""
+        region: ""
+        keyId: ""
+        secret: ""
+        appDb: snowplow-iglu
+
+strimzi:
+  enabled: true
+cloudnativepg:
+  enabled: true
