@@ -20,18 +20,14 @@ name: pragmatik-analytics-helm
 sources:
   - https://github.com/PragmatikAI/pragmatik-analytics-helm
 type: application
-version: 0.1.59
+version: 0.1.0
 
 dependencies:
   - name: strimzi-kafka-operator
-    version: "0.38.0"
+    version: "0.43.0"
     repository: "https://strimzi.io/charts/"
     condition: strimzi.enabled
   - name: cloudnative-pg
-    version: "0.19.1"
+    version: "0.21.5"
     repository: "https://cloudnative-pg.io/charts/"
     condition: cloudnativepg.enabled
-  - name: postgresql
-    repository: https://charts.bitnami.com/bitnami
-    version: 11.9.13
-    condition: postgresql.enabled
