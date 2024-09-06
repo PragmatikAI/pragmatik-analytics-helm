@@ -7,7 +7,7 @@ metadata:
 spec:
   description: "Iglu cluster"
   imageName: {{ .Values.iglu.database.image.name }}:{{ .Values.iglu.database.image.tag }}
-  instances: {{  }} 
+  instances: {{ .Values.iglu.database.instanceCount }} 
   primaryUpdateStrategy: unsupervised
   storage:
     storageClass: gp2
