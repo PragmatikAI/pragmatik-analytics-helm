@@ -1,6 +1,6 @@
 apiVersion: v1
 entries:
-  /pragmatik-analytics-helm:
+  pragmatik-analytics:
   - annotations:
       artifacthub.io/license: Apache-2.0
       artifacthub.io/links: |
@@ -11,30 +11,30 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2023-12-22T20:35:53.576482+01:00"
+    created: "2024-09-06T12:41:58.339662+01:00"
     dependencies:
     - condition: strimzi.enabled
       name: strimzi-kafka-operator
       repository: https://strimzi.io/charts/
-      version: 0.38.0
+      version: 0.43.0
     - condition: cloudnativepg.enabled
       name: cloudnative-pg
       repository: https://cloudnative-pg.io/charts/
-      version: 0.19.1
-    description: pragmatik-analytics-helm Pragmatik Analytics k8s chart
-    digest: 29f9638dda44b3e5615bf7d9a18b2034165a14f04dfcfcc7bf54a0d9c198fc77
+      version: 0.21.5
+    description: pragmatik-analytics-helm Snowplow k8s chart
+    digest: 9975cbc92911cd1855b1366a7ce5d775915e91788764f76340d43c7ed4dd7e5b
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
     keywords:
     - argocd
     kubeVersion: '>=1.16.0-0'
     maintainers:
-    - email: analytics@pragmatik.ai
-      name: pragmatik-devs
-    name: pragmatik-analytics-helm
+    - email: mitch@pragmatik.ai
+      name: mitch
+    name: pragmatik-analytics
     sources:
     - https://github.com/PragmatikAI/pragmatik-analytics-helm
     type: application
     urls:
-    - TODO
-    version: 0.1.59
-generated: "2023-12-22T20:35:53.552984+01:00"
+    - pragmatik-analytics-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-09-06T12:41:58.320745+01:00"

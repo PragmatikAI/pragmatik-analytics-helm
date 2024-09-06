@@ -14,9 +14,9 @@ keywords:
   - argocd
 kubeVersion: '>=1.16.0-0'
 maintainers:
-  - email: analytics@pragmatik.ai
-    name: pragmatik-dev
-name: pragmatik-analytics-helm
+  - email: mitch@pragmatik.ai
+    name: mitch
+name: pragmatik-analytics
 sources:
   - https://github.com/PragmatikAI/pragmatik-analytics-helm
 type: application
