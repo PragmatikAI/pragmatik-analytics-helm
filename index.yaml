@@ -11,7 +11,43 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-06T15:14:45.000127+01:00"
+    created: "2024-09-06T16:20:53.143856+01:00"
+    dependencies:
+    - condition: strimzi.enabled
+      name: strimzi-kafka-operator
+      repository: https://strimzi.io/charts/
+      version: 0.43.0
+    - condition: cloudnativepg.enabled
+      name: cloudnative-pg
+      repository: https://cloudnative-pg.io/charts/
+      version: 0.21.5
+    description: pragmatik-analytics-helm Snowplow k8s chart
+    digest: 2c74d91ba50906c18da43e564d44194cae59478a30eb29b3eb23477955c13130
+    home: https://github.com/PragmatikAI/pragmatik-analytics-helm
+    keywords:
+    - argocd
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: mitch@pragmatik.ai
+      name: mitch
+    name: pragmatik-analytics
+    sources:
+    - https://github.com/PragmatikAI/pragmatik-analytics-helm
+    type: application
+    urls:
+    - pragmatik-analytics-0.2.1.tgz
+    version: 0.2.1
+  - annotations:
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/PragmatikAI/pragmatik-analytics-helm
+        - name: Upstream Project
+          url: https://github.com/PragmatikAI/pragmatik-analytics-helm
+      artifacthub.io/operator: "true"
+    apiVersion: v2
+    appVersion: v1.1
+    created: "2024-09-06T16:20:53.130491+01:00"
     dependencies:
     - condition: strimzi.enabled
       name: strimzi-kafka-operator
@@ -47,7 +83,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-06T15:14:44.9852+01:00"
+    created: "2024-09-06T16:20:53.114136+01:00"
     dependencies:
     - condition: strimzi.enabled
       name: strimzi-kafka-operator
@@ -73,4 +109,4 @@ entries:
     urls:
     - pragmatik-analytics-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-06T15:14:44.968507+01:00"
+generated: "2024-09-06T16:20:53.099875+01:00"
