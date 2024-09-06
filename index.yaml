@@ -35,6 +35,6 @@ entries:
     - https://github.com/PragmatikAI/pragmatik-analytics-helm
     type: application
     urls:
-    - TODO
-    version: 0.1.59
+    - https://pragmatikai.github.io/pragmatik-analytics-helm/
+    version: 0.1.0
 generated: "2023-12-22T20:35:53.552984+01:00"
