@@ -4,7 +4,6 @@ url: "pragmatik.co"
 akhqUrl: "akhq.com"
 
 collector:
-  serviceaccountCreds: "ZW1wdHkK"
   kafka:
     outTopic: collector-payloads
   serviceType: NodePort
@@ -19,7 +18,6 @@ collector:
     "/customdtsp/tp2": "/com.snowplowanalytics.snowplow/tp2"
 
 enrich:
-  serviceaccountCreds: "ZW1wdHkK"
   salt: "empty"
 
 
