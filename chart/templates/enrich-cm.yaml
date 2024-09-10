@@ -131,18 +131,18 @@ data:
   config.hocon: |
     {
       "input": {
-        "topicName": "collector-payloads"
+        "topicName": {{ .Values.enrich.kafka.inputTopicName }}
           "bootstrapServers": "snowplow-kafka-bootstrap.snowplow.svc.cluster.local:9092"
       }
 
       "output": {
         "good": {
-          "topicName": "enriched"
+          "topicName": {{ .Values.enrich.kafka.enrichedTopicName }}
             "bootstrapServers": "snowplow-kafka-bootstrap.snowplow.svc.cluster.local:9092"
         }
 
         "bad": {
-          "topicName": "bad"
+          "topicName": {{ .Values.enrich.kafka.badTopicName }}
             "bootstrapServers": "snowplow-kafka-bootstrap.snowplow.svc.cluster.local:9092"
         }
       }

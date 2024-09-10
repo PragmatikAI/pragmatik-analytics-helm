@@ -4,7 +4,8 @@ url: "pragmatik.co"
 
 collector:
   kafka:
-    outTopic: collector-payloads
+    goodTopicName: sp-collector-payloads
+    badTopicName: sp-collector-bad-payloads
   serviceType: NodePort
   ingress:
     className: ""
@@ -18,7 +19,10 @@ collector:
 
 enrich:
   salt: "empty"
-
+  kafka:
+   inputTopicName: sp-collector-payloads
+   enrichedTopicName: sp-enriched
+   badTopicName: sp-bad
 
 iglu:
   apiKey: "REPLACE-ME"
