@@ -1,7 +1,6 @@
 nameOverride: ""
 
 url: "pragmatik.co"
-akhqUrl: "akhq.com"
 
 collector:
   kafka:
@@ -48,8 +47,3 @@ iglu:
         keyId: ""
         secret: ""
         appDb: snowplow-iglu
-
-strimzi:
-  enabled: true
-cloudnativepg:
-  enabled: true
