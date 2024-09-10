@@ -11,7 +11,34 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-10T17:26:19.932325+01:00"
+    created: "2024-09-10T17:32:19.418796+01:00"
+    description: pragmatik-analytics-helm Snowplow k8s chart
+    digest: 94808620b43cde667e1d57e6206a95557f9c181af770d60ded28cd5b735d531d
+    home: https://github.com/PragmatikAI/pragmatik-analytics-helm
+    keywords:
+    - argocd
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: mitch@pragmatik.ai
+      name: mitch
+    name: pragmatik-analytics
+    sources:
+    - https://github.com/PragmatikAI/pragmatik-analytics-helm
+    type: application
+    urls:
+    - pragmatik-analytics-0.3.3.tgz
+    version: 0.3.3
+  - annotations:
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/PragmatikAI/pragmatik-analytics-helm
+        - name: Upstream Project
+          url: https://github.com/PragmatikAI/pragmatik-analytics-helm
+      artifacthub.io/operator: "true"
+    apiVersion: v2
+    appVersion: v1.1
+    created: "2024-09-10T17:32:19.418426+01:00"
     description: pragmatik-analytics-helm Snowplow k8s chart
     digest: 76472e15dadb9a4102c5fb457fc64ce2286673ea9ae026faaad15215f59e733a
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
@@ -38,7 +65,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-10T17:26:19.931708+01:00"
+    created: "2024-09-10T17:32:19.41789+01:00"
     description: pragmatik-analytics-helm Snowplow k8s chart
     digest: 9f676984c25b752267f9ced8e7d8e306ec72a394dc2f159fe47f25a32b0e7b98
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
@@ -65,7 +92,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-10T17:26:19.931113+01:00"
+    created: "2024-09-10T17:32:19.417306+01:00"
     description: pragmatik-analytics-helm Snowplow k8s chart
     digest: 859b43c10f538d8f7265f7111b7bc9dc873c05d01a4569ab9695c151411599ad
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
@@ -92,7 +119,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-10T17:26:19.930549+01:00"
+    created: "2024-09-10T17:32:19.416658+01:00"
     dependencies:
     - condition: strimzi.enabled
       name: strimzi-kafka-operator
@@ -128,7 +155,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-10T17:26:19.923152+01:00"
+    created: "2024-09-10T17:32:19.408966+01:00"
     dependencies:
     - condition: strimzi.enabled
       name: strimzi-kafka-operator
@@ -164,7 +191,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-10T17:26:19.909812+01:00"
+    created: "2024-09-10T17:32:19.39591+01:00"
     dependencies:
     - condition: strimzi.enabled
       name: strimzi-kafka-operator
@@ -200,7 +227,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-10T17:26:19.896691+01:00"
+    created: "2024-09-10T17:32:19.382503+01:00"
     dependencies:
     - condition: strimzi.enabled
       name: strimzi-kafka-operator
@@ -236,7 +263,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-10T17:26:19.883676+01:00"
+    created: "2024-09-10T17:32:19.368775+01:00"
     dependencies:
     - condition: strimzi.enabled
       name: strimzi-kafka-operator
@@ -272,7 +299,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-10T17:26:19.869767+01:00"
+    created: "2024-09-10T17:32:19.355485+01:00"
     dependencies:
     - condition: strimzi.enabled
       name: strimzi-kafka-operator
@@ -298,4 +325,4 @@ entries:
     urls:
     - pragmatik-analytics-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-10T17:26:19.855196+01:00"
+generated: "2024-09-10T17:32:19.341301+01:00"
