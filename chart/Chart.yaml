@@ -20,5 +20,5 @@ name: pragmatik-analytics
 sources:
   - https://github.com/PragmatikAI/pragmatik-analytics-helm
 type: application
-version: 0.3.3
+version: 0.3.4
 
