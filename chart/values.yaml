@@ -23,6 +23,18 @@ enrich:
    inputTopicName: sp-collector-payloads
    enrichedTopicName: sp-enriched
    badTopicName: sp-bad
+  enrichment_javascript: |
+    {
+      "key": "value"
+    }
+  enrichment_api_request: |
+    {
+      "key": "value"
+    }
+  enrichment_spiders_and_bots: |
+    {
+      "key": "value"
+    }
 
 iglu:
   apiKey: "REPLACE-ME"
