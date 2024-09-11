@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
         - name: enrich-server
-          image: pragmatikai/pragmatik-enrich-kafka:3.9.9
+          image: pragmatikai/pragmatik-enrich-kafka:3.9.11
           command:
-            - "/home/snowplow/bin/snowplow-enrich-kafka"
+            - "/home/snowplow/bin/pragmatik-enrich-kafka"
             - "--config"
             - "/snowplow/config/config.hocon"
             - "--iglu-config"
