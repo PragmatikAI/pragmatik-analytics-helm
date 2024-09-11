@@ -6,17 +6,17 @@ metadata:
 data:
   {{- if .Values.enrich.enrichment_javascript }}
     enrichment_javascript.json: |
-      {{ .Values.enrich.enrichment_javascript | indent 4 }}
+      {{ .Values.enrich.enrichment_javascript | nindent 4 }}
   {{- end }}
 
   {{- if .Values.enrich.enrichment_api_request }}
     enrichment_api_request.json: |
-      {{ .Values.enrich.enrichment_api_request | indent 4 }}
+      {{ .Values.enrich.enrichment_api_request | nindent 4 }}
   {{- end }}
 
   {{- if .Values.enrich.enrichment_spiders_and_bots }}
     enrichment_spiders_and_bots.json: |
-      {{ .Values.enrich.enrichment_spiders_and_bots | indent 4 }}
+      {{ .Values.enrich.enrichment_spiders_and_bots | nindent 4 }}
   {{- end }}
 
   enrichment_campaigns.json: |
