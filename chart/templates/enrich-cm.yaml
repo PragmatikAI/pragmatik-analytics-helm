@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   enrichment_javascript.json: |
-    {{ .Values.enrich.enrichment_javascript | indent 2 }}
+    {{ .Values.enrich.enrichment_javascript | indent 4 }}
 
   enrichment_campaigns.json: |
     {
