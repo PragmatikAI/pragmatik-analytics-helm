@@ -11,9 +11,36 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-11T17:37:22.552333+01:00"
+    created: "2024-09-11T17:44:50.490798+01:00"
     description: pragmatik-analytics-helm Snowplow k8s chart
-    digest: e7c11a260f3a8c56ed521070ab7678dc5c7a06b77c7d67b5f14ff46072cc2c0f
+    digest: 652ffb38933e945cd7f2353a10a31fdc17a5b37c3a1ecbbc49574c57713d5481
+    home: https://github.com/PragmatikAI/pragmatik-analytics-helm
+    keywords:
+    - argocd
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: mitch@pragmatik.ai
+      name: mitch
+    name: pragmatik-analytics
+    sources:
+    - https://github.com/PragmatikAI/pragmatik-analytics-helm
+    type: application
+    urls:
+    - pragmatik-analytics-0.3.10.tgz
+    version: 0.3.10
+  - annotations:
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/PragmatikAI/pragmatik-analytics-helm
+        - name: Upstream Project
+          url: https://github.com/PragmatikAI/pragmatik-analytics-helm
+      artifacthub.io/operator: "true"
+    apiVersion: v2
+    appVersion: v1.1
+    created: "2024-09-11T17:44:50.496905+01:00"
+    description: pragmatik-analytics-helm Snowplow k8s chart
+    digest: 5bf17ecf4955e4b70bc30d1e4669557bd615a918e9e278ed7fa8f966b487065e
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
     keywords:
     - argocd
@@ -38,7 +65,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-11T17:37:22.551954+01:00"
+    created: "2024-09-11T17:44:50.496282+01:00"
     description: pragmatik-analytics-helm Snowplow k8s chart
     digest: 5e7b8e929db7d4eacb103072342b8b9ab39811b92b847dc556548066be1a7e61
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
@@ -65,7 +92,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-11T17:37:22.551406+01:00"
+    created: "2024-09-11T17:44:50.495501+01:00"
     description: pragmatik-analytics-helm Snowplow k8s chart
     digest: 7135579f5ca994ebb01f3f98982560864be41e2f025b2c17c2858c2fa52a927f
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
@@ -92,7 +119,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-11T17:37:22.55071+01:00"
+    created: "2024-09-11T17:44:50.493831+01:00"
     description: pragmatik-analytics-helm Snowplow k8s chart
     digest: 80fd3279eefde8f01575f956364171445bc484a0b60f9f56f37ad64eb677640a
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
@@ -119,7 +146,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-11T17:37:22.550142+01:00"
+    created: "2024-09-11T17:44:50.493221+01:00"
     description: pragmatik-analytics-helm Snowplow k8s chart
     digest: 588b36eea58685c472bc30d84fb40288993814d50d1f901da5bd99ebbb09eddb
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
@@ -146,7 +173,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-11T17:37:22.549613+01:00"
+    created: "2024-09-11T17:44:50.492733+01:00"
     description: pragmatik-analytics-helm Snowplow k8s chart
     digest: 38087bd5d563e454f3a2de6bdade8dc2f92f00cc6db567dffcb7cddeff942551
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
@@ -173,7 +200,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-11T17:37:22.549039+01:00"
+    created: "2024-09-11T17:44:50.49212+01:00"
     description: pragmatik-analytics-helm Snowplow k8s chart
     digest: 94808620b43cde667e1d57e6206a95557f9c181af770d60ded28cd5b735d531d
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
@@ -200,7 +227,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-11T17:37:22.548474+01:00"
+    created: "2024-09-11T17:44:50.491565+01:00"
     description: pragmatik-analytics-helm Snowplow k8s chart
     digest: 76472e15dadb9a4102c5fb457fc64ce2286673ea9ae026faaad15215f59e733a
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
@@ -227,7 +254,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-11T17:37:22.547837+01:00"
+    created: "2024-09-11T17:44:50.490421+01:00"
     description: pragmatik-analytics-helm Snowplow k8s chart
     digest: 9f676984c25b752267f9ced8e7d8e306ec72a394dc2f159fe47f25a32b0e7b98
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
@@ -254,7 +281,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2024-09-11T17:37:22.547258+01:00"
+    created: "2024-09-11T17:44:50.489716+01:00"
     description: pragmatik-analytics-helm Snowplow k8s chart
     digest: 859b43c10f538d8f7265f7111b7bc9dc873c05d01a4569ab9695c151411599ad
     home: https://github.com/PragmatikAI/pragmatik-analytics-helm
@@ -271,4 +298,4 @@ entries:
     urls:
     - pragmatik-analytics-0.3.0.tgz
     version: 0.3.0
-generated: "2024-09-11T17:37:22.546366+01:00"
+generated: "2024-09-11T17:44:50.488724+01:00"
