@@ -3,6 +3,7 @@ nameOverride: ""
 url: "pragmatik.co"
 
 collector:
+  replicas: 1
   kafka:
     goodTopicName: sp-collector-payloads
     badTopicName: sp-collector-bad-payloads

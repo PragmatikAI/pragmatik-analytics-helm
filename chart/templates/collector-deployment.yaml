@@ -4,7 +4,7 @@ metadata:
   name: collector-server
   namespace: {{ .Release.Namespace }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.collector.replicas }}
   selector:
     matchLabels:
       app: collector
