@@ -131,18 +131,18 @@ data:
     {
       "input": {
         "topicName": {{ .Values.enrich.kafka.inputTopicName }}
-          "bootstrapServers": "snowplow-kafka-bootstrap.snowplow.svc.cluster.local:9092"
+          "bootstrapServers": "{{ .Values.enrich.kafka.bootstrapServiceName }}:{{ .Values.enrich.kafka.bootstrapServicePort }}"
       }
 
       "output": {
         "good": {
           "topicName": {{ .Values.enrich.kafka.enrichedTopicName }}
-            "bootstrapServers": "snowplow-kafka-bootstrap.snowplow.svc.cluster.local:9092"
+            "bootstrapServers": "{{ .Values.enrich.kafka.bootstrapServiceName }}:{{ .Values.enrich.kafka.bootstrapServicePort }}"
         }
 
         "bad": {
           "topicName": {{ .Values.enrich.kafka.badTopicName }}
-            "bootstrapServers": "snowplow-kafka-bootstrap.snowplow.svc.cluster.local:9092"
+            "bootstrapServers": "{{ .Values.enrich.kafka.bootstrapServiceName }}:{{ .Values.enrich.kafka.bootstrapServicePort }}"
         }
       }
     }
