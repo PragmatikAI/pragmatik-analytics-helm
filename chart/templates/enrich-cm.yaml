@@ -24,7 +24,7 @@ data:
       "data": {
         "name": "campaign_attribution",
         "vendor": "com.snowplowanalytics.snowplow",
-        "enabled": true,
+        "enabled": {{ .Values.enrich.enrichment_campaigns.enabled }},
         "parameters": {
           "mapping": "static",
           "fields": {
@@ -55,7 +55,7 @@ data:
         "vendor": "com.snowplowanalytics.snowplow.enrichments",
         "name": "pii_enrichment_config",
         "emitEvent": true,
-        "enabled": true,
+        "enabled": {{ .Values.enrich.enrichment_pii.enabled }},
         "parameters": {
           "pii": [
             {
@@ -80,7 +80,7 @@ data:
       "data": {
         "name": "event_fingerprint_config",
         "vendor": "com.snowplowanalytics.snowplow",
-        "enabled": true,
+        "enabled": {{ .Values.enrich.enrichment_event_fingerprint.enabled }},
         "parameters": {
           "excludeParameters": ["cv", "eid", "nuid", "stm"],
           "hashAlgorithm": "MD5"
@@ -94,7 +94,7 @@ data:
       "data": {
         "name": "referer_parser",
         "vendor": "com.snowplowanalytics.snowplow",
-        "enabled": true,
+        "enabled": {{ .Values.enrich.enrichment_referrer_parser.enabled }},
         "parameters": {
           "database": "referers-latest.json",
           "uri": "https://s3-eu-west-1.amazonaws.com/snowplow-hosted-assets/third-party/referer-parser/",
@@ -109,7 +109,7 @@ data:
       "data": {
         "name": "ua_parser_config",
         "vendor": "com.snowplowanalytics.snowplow",
-        "enabled": true,
+        "enabled": {{ .Values.enrich.enrichment_ua_parser.enabled }},
         "parameters": {
           "uri": "https://s3-eu-west-1.amazonaws.com/snowplow-hosted-assets/third-party/ua-parser",
           "database": "regexes-latest.yaml"
@@ -121,7 +121,7 @@ data:
     {
       "schema": "iglu:com.snowplowanalytics.snowplow.enrichments/yauaa_enrichment_config/jsonschema/1-0-0",
       "data": {
-        "enabled": true,
+        "enabled": {{ .Values.enrich.enrichment_yauaa.enabled }},
         "vendor": "com.snowplowanalytics.snowplow.enrichments",
         "name": "yauaa_enrichment_config"
       }

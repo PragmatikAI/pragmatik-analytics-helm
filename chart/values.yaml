@@ -24,6 +24,19 @@ enrich:
    inputTopicName: sp-collector-payloads
    enrichedTopicName: sp-enriched
    badTopicName: sp-bad
+  enrichment_ua_parser: 
+    enabled: true
+  enrichment_yauaa:
+    enabled: true
+  enrichment_referrer_parser:
+    enabled: true
+  enrichment_event_fingerprint:
+    enabled: true
+  enrichment_pii:
+    enabled: true
+  enrichment_campaigns:
+    enabled: true
+
   enrichment_javascript: |
     {
       "key": "value"
