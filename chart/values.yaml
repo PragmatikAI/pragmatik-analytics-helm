@@ -79,10 +79,18 @@ iglu:
         appDb: snowplow-iglu
 
 transformer:
-  inputQueue:
-    topicName: sp-enriched
-  output:
+  kafka:
+    bootstrapServiceName: kafka
+    bootstrapServicePort: 9092
+  outputS3:
     path: s3://snowplow-transformer-output
     region: us-east-1
+    # secret key
+    # accessKeyId: ""
+    # access key
+    # secretAccessKey: ""
   outputQueue:
     topicName: sp-enriched-transformed
+  inputQueue:
+    topicName: sp-enriched
+
