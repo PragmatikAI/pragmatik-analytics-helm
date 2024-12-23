@@ -9,18 +9,18 @@ data:
       "input": {
         "type": "kafka",
         "streamName": "{{ .Values.transformer.inputQueue.topicName }}",
-        "bootstrapServers": "{{ .Values.transformer.kafka.bootstrapServers }}:{{ .Values.transformer.kafka.port }}"
+        "bootstrapServers": "{{ .Values.transformer.kafka.bootstrapServiceName }}:{{ .Values.transformer.kafka.bootstrapServicePort }}"
       }
       "output": {
-        "path": "{{ .Values.transformer.output.path }}",
-        "region": "{{ .Values.transformer.output.region }}",
+        "path": "{{ .Values.transformer.outputS3.path }}",
+        "region": "{{ .Values.transformer.outputS3.region }}",
         "compression": "GZIP"
       }
       "windowing": "1 minutes"
       "queue": {
         "type": "kafka",
         "topicName": "{{ .Values.transformer.outputQueue.topicName }}",
-        "bootstrapServers": "{{ .Values.transformer.kafka.bootstrapServers }}:{{ .Values.transformer.kafka.port }}"
+        "bootstrapServers": "{{ .Values.transformer.kafka.bootstrapServiceName }}:{{ .Values.transformer.kafka.bootstrapServicePort }}"
       }
       "formats": {
         "transformationType": "shred"
