@@ -1,0 +1,33 @@
+{
+  "input": {
+    "type": "kafka",
+    "streamName": "pa-enriched",
+    "bootstrapServers": "pragmatik-analytics-kafka-bootstrap.kafka.svc.cluster.local:9092"
+  }
+  "output": {
+    "path": "s3://pragmatik-pa-events/transformed/good/shredded/tsv",
+    "region": "eu-west-1",
+    "compression": "GZIP"
+  }
+  "windowing": "1 
+  minutes""queue": {
+    "type": "kafka",
+    "topicName": "pa-transformer-output",
+    "bootstrapServers": "pragmatik-analytics-kafka-bootstrap.kafka.svc.cluster.local:9092"
+  }
+  "formats": {
+    "transformationType": "shred""default": "TSV",
+    "json":
+  ],
+  "tsv":
+],
+"skip":
+]
+}
+  "telemetry": {
+"disable": true
+    "interval": 15 minutes
+    "method": "POST""collectorUri": """collectorPort": 443
+    "secure": true
+}
+}

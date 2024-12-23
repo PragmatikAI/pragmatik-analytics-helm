@@ -17,7 +17,7 @@ data:
     {
       "input": {
         "type": "kafka",
-        "streamName": "{{ .Values.transformer.inputQueue.topicName }}",
+        "topicName": "{{ .Values.transformer.inputQueue.topicName }}",
         "bootstrapServers": "{{ .Values.transformer.kafka.bootstrapServiceName }}:{{ .Values.transformer.kafka.bootstrapServicePort }}"
       }
       "output": {
