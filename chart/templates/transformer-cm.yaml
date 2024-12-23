@@ -1,0 +1,41 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: transformer-configmap
+  namespace: {{ .Release.Namespace }}
+data:
+  config.hocon: |
+    {
+      "input": {
+        "type": "kafka",
+        "streamName": "{{ .Values.transformer.inputQueue.topicName }}",
+        "bootstrapServers": "{{ .Values.transformer.kafka.bootstrapServers }}:{{ .Values.transformer.kafka.port }}"
+      }
+      "output": {
+        "path": "{{ .Values.transformer.output.path }}",
+        "region": "{{ .Values.transformer.output.region }}",
+        "compression": "GZIP"
+      }
+      "windowing": "1 minutes"
+      "queue": {
+        "type": "kafka",
+        "topicName": "{{ .Values.transformer.outputQueue.topicName }}",
+        "bootstrapServers": "{{ .Values.transformer.kafka.bootstrapServers }}:{{ .Values.transformer.kafka.port }}"
+      }
+      "formats": {
+        "transformationType": "shred"
+        "default": "TSV",
+        "json": [],
+        "tsv": [],
+        "skip": []
+      }
+      "telemetry": {
+        "disable": true
+        "interval": 15 minutes
+        "method": "POST"
+        "collectorUri": ""
+        "collectorPort": 443
+        "secure": true
+      }
+    }
+
