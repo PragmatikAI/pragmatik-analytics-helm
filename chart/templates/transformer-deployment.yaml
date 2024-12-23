@@ -41,6 +41,7 @@ spec:
                   name: transformer-aws-creds
                   key: secret_access_key
           command:
+            - "/home/snowplow/bin/snowplow-transformer-kafka"
             - "--config"
             - "/snowplow/config/config.hocon"
             - "--iglu-config"
