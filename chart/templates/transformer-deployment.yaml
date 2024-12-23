@@ -40,6 +40,8 @@ spec:
                 secretKeyRef:
                   name: transformer-aws-creds
                   key: secret_access_key
+            - name: JAVA_OPTS
+              value: -Dconfig.override_with_env_vars=true -Dorg.slf4j.simpleLogger.defaultLogLevel=info
           command:
             - "/home/snowplow/bin/snowplow-transformer-kafka"
             - "--config"
