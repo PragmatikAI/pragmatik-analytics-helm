@@ -77,3 +77,12 @@ iglu:
         keyId: ""
         secret: ""
         appDb: snowplow-iglu
+
+transformer:
+  inputQueue:
+    topicName: sp-enriched
+  output:
+    path: s3://snowplow-transformer-output
+    region: us-east-1
+  outputQueue:
+    topicName: sp-enriched-transformed
