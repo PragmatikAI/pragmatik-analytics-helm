@@ -41,9 +41,10 @@ spec:
                   name: transformer-aws-creds
                   key: secret_access_key
           command:
-            - "/home/snowplow/bin/snowplow-stream-transformer"
             - "--config"
             - "/snowplow/config/config.hocon"
+            - "--iglu-config"
+            - "/snowplow/config/iglu-config.json"
           imagePullPolicy: IfNotPresent
           env:
             - name: JAVA_OPTS
@@ -64,3 +65,5 @@ spec:
             items:
               - key: config.hocon
                 path: config.hocon
+              - key: iglu-config.json
+                path: iglu-config.json

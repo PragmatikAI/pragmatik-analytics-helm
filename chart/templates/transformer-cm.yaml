@@ -4,6 +4,15 @@ metadata:
   name: transformer-configmap
   namespace: {{ .Release.Namespace }}
 data:
+  iglu-config.json: |
+    {
+      "schema": "iglu:com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-2",
+      "data": {
+        "cacheSize": 500,
+        "cacheTtl": 600,
+        "repositories": [{"connection":{"http":{"uri":"http://iglucentral.com"}},"name":"Iglu Central","priority":10,"vendorPrefixes":[]},{"connection":{"http":{"uri":"http://mirror01.iglucentral.com"}},"name":"Iglu Central - Mirror 01","priority":20,"vendorPrefixes":[]},{"connection":{"http":{"apikey":"{{ .Values.transformer.iglu.apiKey }}","uri":"{{ .Values.transformer.iglu.uri }}"}},"name":"Iglu Server","priority":0,"vendorPrefixes":[]}]
+      }
+    }
   config.hocon: |
     {
       "input": {
