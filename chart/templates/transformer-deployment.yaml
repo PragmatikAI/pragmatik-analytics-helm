@@ -28,7 +28,7 @@ spec:
                 topologyKey: "kubernetes.io/hostname"
       containers:
         - name: transformer-server
-          image: pragmatikai/pragmatik-transformer:1.0.1
+          image: {{ .Values.transformer.image }}
           imagePullPolicy: IfNotPresent
 
           volumeMounts:
