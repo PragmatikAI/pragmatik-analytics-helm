@@ -20,10 +20,10 @@ data:
         "topicName": "{{ .Values.transformer.inputQueue.topicName }}"
         "bootstrapServers": "{{ .Values.transformer.kafka.bootstrapServiceName }}:{{ .Values.transformer.kafka.bootstrapServicePort }}"
         "consumerConf": {
-          "enable.auto.commit": "false"
-          "auto.offset.reset" : "latest"
-          "group.id": "pa-stream-transformer"
-          "allow.auto.create.topics": "false"
+          "enable_auto_commit": "false"
+          "auto_offset_reset" : "latest"
+          "group_id": "pa-stream-transformer"
+          "allow_auto_create.topics": "false"
         }
       }
       "output": {
