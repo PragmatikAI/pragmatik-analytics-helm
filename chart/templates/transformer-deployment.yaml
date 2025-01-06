@@ -28,26 +28,12 @@ spec:
                 topologyKey: "kubernetes.io/hostname"
       containers:
         - name: transformer-server
-          image: pragmatikai/transformer-kafka:5.6.8
-          env:
-            - name: JAVA_OPTS
-              value: -Dorg.slf4j.simpleLogger.defaultLogLevel=info
-          envFrom:
-            - secretRef:
-                name: transformer-aws-creds
-          command:
-            - "/home/snowplow/bin/snowplow-transformer-kafka"
-            - "--config"
-            - "/snowplow/config/config.hocon"
-            - "--iglu-config"
-            - "/snowplow/config/iglu-config.json"
+          image: pragmatikai/pragmatik-transformer:1.0.1
           imagePullPolicy: IfNotPresent
-          env:
-            - name: JAVA_OPTS
-              value: -Dorg.slf4j.simpleLogger.defaultLogLevel=info
+
           volumeMounts:
             - name: transformer-config-volume
-              mountPath: /snowplow/config
+              mountPath: /pragmatik/config
           resources:
             requests:
               memory: "128Mi"
@@ -59,7 +45,7 @@ spec:
           configMap:
             name: transformer-configmap
             items:
-              - key: config.hocon
-                path: config.hocon
+              - key: transformer-config.hocon
+                path: transformer-config.hocon
               - key: iglu-config.json
                 path: iglu-config.json

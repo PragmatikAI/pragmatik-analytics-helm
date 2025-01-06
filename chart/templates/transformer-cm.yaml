@@ -13,38 +13,22 @@ data:
         "repositories": [{"connection":{"http":{"uri":"http://iglucentral.com"}},"name":"Iglu Central","priority":10,"vendorPrefixes":[]},{"connection":{"http":{"uri":"http://mirror01.iglucentral.com"}},"name":"Iglu Central - Mirror 01","priority":20,"vendorPrefixes":[]},{"connection":{"http":{"apikey":"{{ .Values.transformer.iglu.apiKey }}","uri":"{{ .Values.transformer.iglu.uri }}"}},"name":"Iglu Server","priority":0,"vendorPrefixes":[]}]
       }
     }
-  config.hocon: |
+  transformer-config.hocon: |
     {
       "input": {
-        "type": "kafka",
-        "topicName": "{{ .Values.transformer.inputQueue.topicName }}",
+        "type": "kafka"
+        "topicName": "{{ .Values.transformer.inputQueue.topicName }}"
         "bootstrapServers": "{{ .Values.transformer.kafka.bootstrapServiceName }}:{{ .Values.transformer.kafka.bootstrapServicePort }}"
+        "consumerConf": {
+          "enable.auto.commit": "false"
+          "auto.offset.reset" : "latest"
+          "group.id": "pa-stream-transformer"
+          "allow.auto.create.topics": "false"
+        }
       }
       "output": {
-        "path": "{{ .Values.transformer.outputS3.path }}",
-        "region": "{{ .Values.transformer.outputS3.region }}",
-        "compression": "GZIP"
-      }
-      "windowing": "1 minutes"
-      "queue": {
-        "type": "kafka",
-        "topicName": "{{ .Values.transformer.outputQueue.topicName }}",
+        "type": "kafka"
+        "topicName": "{{ .Values.transformer.outputQueue.topicName }}"
         "bootstrapServers": "{{ .Values.transformer.kafka.bootstrapServiceName }}:{{ .Values.transformer.kafka.bootstrapServicePort }}"
       }
-      "formats": {
-        "transformationType": "shred"
-        "default": "TSV",
-        "json": [],
-        "tsv": [],
-        "skip": []
-      }
-      "telemetry": {
-        "disable": true
-        "interval": 15 minutes
-        "method": "POST"
-        "collectorUri": ""
-        "collectorPort": 443
-        "secure": true
-      }
     }
-
