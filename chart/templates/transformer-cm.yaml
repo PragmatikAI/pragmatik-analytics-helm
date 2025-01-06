@@ -31,4 +31,7 @@ data:
         "topicName": "{{ .Values.transformer.outputQueue.topicName }}"
         "bootstrapServers": "{{ .Values.transformer.kafka.bootstrapServiceName }}:{{ .Values.transformer.kafka.bootstrapServicePort }}"
       }
+      "logging": {
+        "level": "INFO"
+      }
     }
