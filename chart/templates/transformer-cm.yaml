@@ -22,7 +22,7 @@ data:
         "consumerConf": {
           "enable_auto_commit": "false"
           "auto_offset_reset" : "latest"
-          "group_id": "pa-stream-transformer"
+          "group_id": {{ .Values.transformer.inputQueue.consumerGroupId }}
           "allow_auto_create.topics": "false"
         }
       }
