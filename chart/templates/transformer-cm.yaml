@@ -32,6 +32,6 @@ data:
         "bootstrapServers": "{{ .Values.transformer.kafka.bootstrapServiceName }}:{{ .Values.transformer.kafka.bootstrapServicePort }}"
       }
       "logging": {
-        "level": "INFO"
+        "level": "{{ .Values.transformer.logging.level }}"
       }
     }
