@@ -4,6 +4,13 @@ url: "pragmatik.co"
 
 collector:
   replicas: 1
+  resources:
+    requests:
+      memory: "128Mi"
+      cpu: "250m"
+    limits:
+      memory: "512Mi"
+      cpu: "250m"
   kafka:
     goodTopicName: sp-collector-payloads
     badTopicName: sp-collector-bad-payloads
@@ -59,6 +66,13 @@ enrich:
 
 iglu:
   apiKey: "REPLACE-ME"
+  resources:
+    requests:
+      memory: "500Mi"
+      cpu: "250m"
+    limits:
+      memory: "750Mi"
+      cpu: "500m"
   database:
     host: "snowplow-postgres.snowplow"
     name: "iglu"

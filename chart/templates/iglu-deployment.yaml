@@ -35,10 +35,11 @@ spec:
               mountPath: /snowplow/config
           resources:
             requests:
-              memory: "256Mi"
-              cpu: "100m"
+              memory: {{ .Values.iglu.resources.requests.memory }}
+              cpu: {{ .Values.iglu.resources.requests.cpu }}
             limits:
-              memory: "1.5Gi"
+              memory: {{ .Values.iglu.resources.limits.memory }}
+              cpu: {{ .Values.iglu.resources.limits.cpu }}
       volumes:
         - name: iglu-config-volume
           configMap:
