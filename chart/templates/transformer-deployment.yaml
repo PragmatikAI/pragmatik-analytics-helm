@@ -36,10 +36,11 @@ spec:
               mountPath: /pragmatik/config
           resources:
             requests:
-              memory: "128Mi"
-              cpu: "250m"
+              memory: {{ .Values.transformer.resources.requests.memory }}
+              cpu: {{ .Values.transformer.resources.requests.cpu }}
             limits:
-              memory: "1Gi"
+              memory: {{ .Values.transformer.resources.limits.memory }}
+              cpu: {{ .Values.transformer.resources.limits.cpu }}
       volumes:
         - name: transformer-config-volume
           configMap:

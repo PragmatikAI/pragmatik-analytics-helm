@@ -20,6 +20,13 @@ collector:
 
 enrich:
   salt: "empty"
+  resources:
+    requests:
+      memory: "640Mi"
+      cpu: "250m"
+    limits:
+      memory: "1Gi"
+      cpu: "250m"
   kafka:
    inputTopicName: sp-collector-payloads
    enrichedTopicName: sp-enriched
@@ -85,12 +92,14 @@ transformer:
   outputS3:
     path: s3://snowplow-transformer-output
     region: us-east-1
-    # secret key
-    # accessKeyId: ""
-    # access key
-    # secretAccessKey: ""
   outputQueue:
     topicName: sp-enriched-transformed
   inputQueue:
     topicName: sp-enriched
-
+  resources:
+    requests:
+      memory: "128Mi"
+      cpu: "250m"
+    limits:
+      memory: "512Mi"
+      cpu: "250m"

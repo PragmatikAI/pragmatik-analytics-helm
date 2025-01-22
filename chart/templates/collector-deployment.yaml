@@ -46,10 +46,11 @@ spec:
               mountPath: /snowplow/config
           resources:
             requests:
-              memory: "128Mi"
-              cpu: "250m"
+              memory: {{ .Values.collector.resources.requests.memory }}
+              cpu: {{ .Values.collector.resources.requests.cpu }}
             limits:
-              memory: "1Gi"
+              memory: {{ .Values.collector.resources.limits.memory }}
+              cpu: {{ .Values.collector.resources.limits.cpu }}
       volumes:
         - name: collector-config-volume
           configMap:

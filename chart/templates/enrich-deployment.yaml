@@ -34,10 +34,11 @@ spec:
               mountPath: /snowplow/config
           resources:
             requests:
-              memory: "256Mi"
-              cpu: "350m"
+              memory: {{ .Values.enrich.resources.requests.memory }}
+              cpu: {{ .Values.enrich.resources.requests.cpu }}
             limits:
-              memory: "1.5Gi"
+              memory: {{ .Values.enrich.resources.limits.memory }}
+              cpu: {{ .Values.enrich.resources.limits.cpu }}
       volumes:
         - name: enrich-config-volume
           configMap:
