@@ -7,6 +7,6 @@ spec:
   targetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: collector
+    name: collector-server
   updatePolicy:
     updateMode: Auto
