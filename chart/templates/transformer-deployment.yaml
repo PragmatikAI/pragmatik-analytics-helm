@@ -43,7 +43,7 @@ spec:
               cpu: {{ .Values.transformer.resources.limits.cpu }}
       {{- if .Values.transformer.tolerations }}
       tolerations:
-      {{ toYaml .Values.transformer.tolerations | nindent 4 }}
+        {{- toYaml .Values.transformer.tolerations | nindent 8 }}
       {{- end }}
       volumes:
         - name: transformer-config-volume
