@@ -148,7 +148,6 @@ data:
       "monitoring": {
         "metrics": {
           "statsd": {
-            "enabled": {{ .Values.enrich.statsd.enabled }}
             "hostname": {{ .Values.enrich.statsd.hostname }}
             "port": {{ .Values.enrich.statsd.port }}
             "period": 10
