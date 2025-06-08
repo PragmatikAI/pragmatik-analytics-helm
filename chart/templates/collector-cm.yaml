@@ -98,7 +98,7 @@ data:
         # Required, how frequently to report metrics
         period = "10 seconds"
         # Optional, override the default metric prefix
-        prefix = "pragmatik.collector."
+        prefix = "pragmatik.collector"
 
         # Any key-value pairs to be tagged on every StatsD metric
         "tags": {

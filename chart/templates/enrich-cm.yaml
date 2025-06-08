@@ -145,19 +145,6 @@ data:
             "bootstrapServers": "{{ .Values.enrich.kafka.bootstrapServiceName }}:{{ .Values.enrich.kafka.bootstrapServicePort }}"
         }
       }
-      "monitoring": {
-        "metrics": {
-          "statsd": {
-            "hostname": {{ .Values.enrich.statsd.hostname }}
-            "port": {{ .Values.enrich.statsd.port }}
-            "period": 10
-            "tags": {
-              "app": "enrich"
-            }
-            "prefix": "pragmatik.enrich."
-          }
-        }
-      }
     }
 
   iglu-config.json: |
