@@ -9,15 +9,18 @@ metadata:
   {{- end }}
 spec:
   tls:
+    {{- range .Values.collector.ingress.tls}}
     - hosts:
-        - {{ .Values.url }}
-      {{- if .Values.collector.ingress.tls.secretName }}
-      secretName: {{ .Values.collector.ingress.tls.secretName }}
+      {{- range .hosts }}
+        - {{ . }}
       {{- end }}
+      secretName: {{ .secretName }}
+    {{- end }}
       
   ingressClassName: {{ .Values.collector.ingress.className }}
   rules:
-    - host: {{ .Values.url }}
+    {{- range .Values.collector.ingress.hosts }}
+    - host: {{ . }}
       http:
         paths:
           - path: /
@@ -27,3 +30,4 @@ spec:
                 name: collector
                 port:
                   number: 8080
+    {{- end }}
