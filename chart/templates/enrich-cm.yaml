@@ -131,7 +131,10 @@ data:
     {
       "input": {
         "topicName": {{ .Values.enrich.kafka.inputTopicName }}
-          "bootstrapServers": "{{ .Values.enrich.kafka.bootstrapServiceName }}:{{ .Values.enrich.kafka.bootstrapServicePort }}"
+        "bootstrapServers": "{{ .Values.enrich.kafka.bootstrapServiceName }}:{{ .Values.enrich.kafka.bootstrapServicePort }}"
+        "consumerConf": {
+          "sessionTimeout": "{{ .Values.enrich.kafka.sessionTimeoutMs }}"
+        }
       }
 
       "output": {
@@ -143,6 +146,19 @@ data:
         "bad": {
           "topicName": {{ .Values.enrich.kafka.badTopicName }}
             "bootstrapServers": "{{ .Values.enrich.kafka.bootstrapServiceName }}:{{ .Values.enrich.kafka.bootstrapServicePort }}"
+        }
+      }
+      "monitoring": {
+        "metrics": {
+          "statsd": {
+            "hostname": "{{ .Values.enrich.statsd.hostname }}",
+            "port": {{ .Values.enrich.statsd.port }}
+            "period": "10 seconds"
+            "prefix": "pragmatik.enrich"
+            "tags": {
+              "app": "enrich"
+            }
+          }
         }
       }
     }
