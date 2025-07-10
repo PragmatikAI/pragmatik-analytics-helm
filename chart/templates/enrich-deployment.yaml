@@ -4,7 +4,7 @@ metadata:
   name: enrich-server
   namespace: {{ .Release.Namespace }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.enrich.replicas }}
   selector:
     matchLabels:
       app: enrich
@@ -14,6 +14,18 @@ spec:
         app: enrich
         checksum-config: {{ include (print $.Template.BasePath "/enrich-cm.yaml") . | sha256sum | trimSuffix "-" | trunc 63 }}
     spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 10
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - enrich
+                topologyKey: "kubernetes.io/hostname"
       containers:
         - name: enrich-server
           image: pragmatikai/pragmatik-enrich-kafka:3.9.11
@@ -39,6 +51,10 @@ spec:
             limits:
               memory: {{ .Values.enrich.resources.limits.memory }}
               cpu: {{ .Values.enrich.resources.limits.cpu }}
+      {{- if .Values.enrich.tolerations }}
+      tolerations:
+        {{- toYaml .Values.enrich.tolerations | nindent 8 }}
+      {{- end }}
       volumes:
         - name: enrich-config-volume
           configMap:
