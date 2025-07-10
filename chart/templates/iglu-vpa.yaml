@@ -1,4 +1,4 @@
-{{- if .Values.iglu.deployVpa }}
+{{- if .Values.iglu.enableVpa }}
 apiVersion: autoscaling.k8s.io/v1
 kind: VerticalPodAutoscaler
 metadata:
