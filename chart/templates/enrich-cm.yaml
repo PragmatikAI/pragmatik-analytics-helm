@@ -133,7 +133,7 @@ data:
         "topicName": {{ .Values.enrich.kafka.inputTopicName }}
         "bootstrapServers": "{{ .Values.enrich.kafka.bootstrapServiceName }}:{{ .Values.enrich.kafka.bootstrapServicePort }}"
         "consumerConf": {
-          "sessionTimeout": "{{ .Values.enrich.kafka.sessionTimeoutMs }}"
+          "session.timeout.ms": "{{ .Values.enrich.kafka.sessionTimeoutMs | default 10000 }}"
         }
       }
 
