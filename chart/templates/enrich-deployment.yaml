@@ -74,6 +74,8 @@ spec:
                 path: enrichments/enrichment_referrer_parser.json
               - key: enrichment_ua_parser.json
                 path: enrichments/enrichment_ua_parser.json
+              - key: enrichment_yauaa.json
+                path: enrichments/enrichment_yauaa.json
               {{- if .Values.enrich.enrichment_javascript }}
               - key: enrichment_javascript.json
                 path: enrichments/enrichment_javascript.json
