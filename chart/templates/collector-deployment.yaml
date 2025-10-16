@@ -65,6 +65,10 @@ spec:
             limits:
               memory: {{ .Values.collector.resources.limits.memory }}
               cpu: {{ .Values.collector.resources.limits.cpu }}
+      {{- if .Values.transformer.tolerations }}
+      tolerations:
+        {{- toYaml .Values.transformer.tolerations | nindent 8 }}
+      {{- end }}
       volumes:
         - name: collector-config-volume
           configMap:
