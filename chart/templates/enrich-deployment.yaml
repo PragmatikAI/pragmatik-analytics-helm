@@ -28,7 +28,7 @@ spec:
                 topologyKey: "kubernetes.io/hostname"
       containers:
         - name: enrich-server
-          image: pragmatikai/pragmatik-enrich-kafka:3.9.11
+          image: pragmatikai/pragmatik-enrich-kafka:3.9.13
           command:
             - "/home/snowplow/bin/pragmatik-enrich-kafka"
             - "--config"
